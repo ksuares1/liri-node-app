@@ -6,4 +6,3 @@ exports.spotify = {
 };
 
 
-var keys = require("./keys.js");
