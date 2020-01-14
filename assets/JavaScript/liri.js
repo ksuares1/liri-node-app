@@ -4,8 +4,8 @@ var keys = require("./keys.js");
 var spotify = new Spotify(keys.spotify);
 
 // commands
-var userInput = process.argv[2];
-if(userInput === "concert-this"){
+var command = process.argv[2];
+if(command === "concert-this"){
 console.log('music');
 }
 
