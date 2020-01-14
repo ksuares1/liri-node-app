@@ -1,6 +1,13 @@
 require("dotenv").config();
 
 var keys = require("./keys.js");
+var spotify = new Spotify(keys.spotify);
 
+// commands
 var userInput = process.argv[2];
-var commands=(concert, spotify, movie, doWhatitSays)
+if(userInput ==="concert-this"){
+console.log();
+}
+
+var artist = process.argv[3];
+
