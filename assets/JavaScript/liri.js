@@ -10,7 +10,8 @@ console.log('music');
 }
 
 var artist = process.argv[3];
-axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp", (function(response, error){
-    
+axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp" 
+.then(function(response, error){
+    console.log(response);
 }
-
+})
