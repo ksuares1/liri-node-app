@@ -14,6 +14,8 @@ if (command === "concert-this") {
         .then(function (response) {
             for (var i = 0; i < response.data.length; i++) {
                 console.log(response.data[i].venue);
+                console.log(response.data[i].venue.city.region);
+                console.log(response.data[i].venue.city.region.date);
             }
 
         })
@@ -23,8 +25,8 @@ if (command === "concert-this") {
         })
 
 } else if (command === "spotify-this-song") {
-    for(var i =0; i<response.data.length; i++){
-        console.log(response.data[i].country.city.region);
+    var song = process.argv[3];
+      
     }
-}
+
 
