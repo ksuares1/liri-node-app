@@ -27,10 +27,10 @@ if (command === "concert-this") {
             console.log(error);
         })
 
-// } else if (command === "spotify-this-song") {
-//     //  var song = process.argv[3];
-//     // console.log(song);
-      
+} else if (command === "spotify-this-song") {
+     var song = process.argv[3];
+     axios.get('https://api.spotify.com/v1/search?q=track:' + songName + '&type=track&limit=10',)
+
 }
 
 
