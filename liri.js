@@ -5,6 +5,9 @@ var Spotify = require('node-spotify-api');
 var keys = require("./assets/JavaScript/keys.js");
 var spotify = new Spotify(keys.spotify);
 
+var moment = require('moment');
+moment().format();
+
 // commands
 var command = process.argv[2];
 var input = process.argv.slice(3).join(' ');
