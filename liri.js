@@ -29,19 +29,20 @@ if (command === "concert-this") {
 
 } else if (command === "spotify-this-song") {
     var songName = process.argv[3];
-    axios.get('https://api.spotify.com/v1/search?q=track:' + songName + '&type=track&limit=10')
-        .then(function (error, response) {
-            for (var i = 0; i < response.data.length; i++) {
+    spotify.request('https://api.spotify.com/v1/search?q=track:' + songName + '&type=track&limit=10', function (error, response) {
+             for (var i = 0; i < response.data ; i++) {
                 console.log(response.data[i].artists.name);
-                console.log(response.data[i].artists.name.song);
-                console.log(response.data[i].artists.name.preview_url);
-                console.log(response.data[i].artists.name);
+                // console.log(response.data[i].artists.name.song);
+                // console.log(response.data[i].artists.name.preview_url);
+                // console.log(response.data[i].artists.name);
                 
             }
-        }
-
+        
+            if (error){
+                return console.log(error);
+            }
     
     
 
-        )
+    })
     }
