@@ -23,14 +23,14 @@ if (command === "concert-this") {
 
         })
 
-        .catch(function (error) {
-            console.log(error);
-        })
+        // .catch(function (error) {
+        //     console.log(error);
+        // })
 
 } else if (command === "spotify-this-song") {
     var songName = process.argv[3];
     spotify.request('https://api.spotify.com/v1/search?q=track:' + songName + '&type=track&limit=10', function (error, response) {
-             for (var i = 0; i < response.data ; i++) {
+             for (var i = 0; i < error.response ; i++) {
                 console.log(response.data[i].artists.name);
                 // console.log(response.data[i].artists.name.song);
                 // console.log(response.data[i].artists.name.preview_url);
