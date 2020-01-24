@@ -40,18 +40,31 @@ if (command === "concert-this") {
     var songName = process.argv[3];
     spotify.request('https://api.spotify.com/v1/search?q=track:' + songName + '&type=track&limit=10', function (error, response) {
         for (var i = 0; i < response.tracks.items.length; i++) {
-            console.log(response.tracks.items[i]);
-            // console.log(response.data[i].artists.name.song);
-            // console.log(response.data[i].artists.name.preview_url);
-            // console.log(response.data[i].artists.name);
+            // console.log(response.tracks.items[i].artists[0].name);
+            console.log(response.tracks.items[i].name);
+            console.log(response.tracks.items[i].uri);
+            console.log(response.tracks.items[i].album.name);
 
         }
 
         if (error) {
             return console.log(error);
         }
+        else if (command === "movie-this") {
+            var movieName = process.argv[3];
+            axios.get("http://www.omdbapi.com/?t=" + movieName+ "&y=&plot=short&apikey=[key]")
+                .then(function (response) {
+                    for (var i = 0; i < response.data.length; i++) {
+                    console.log(response.data[i].title);
+                    console.log(response.data[i].year);
+                    console.log(response.data[i].rating);
+                    console.log(response.data[i].country)
+                    }
+                }
+            
 
+            }
 
-
-    })
-}
+    // })
+ }
+                )}   
