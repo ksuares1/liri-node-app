@@ -58,13 +58,16 @@ if (command === "concert-this") {
                     console.log(response.data[i].title);
                     console.log(response.data[i].year);
                     console.log(response.data[i].rating);
-                    console.log(response.data[i].country)
+                    console.log(response.data[i].country);
+                    console.log(response.data[i].language);
+                    console.log(response.data[i].plot);
+                    console.log(response.data[i].actors);
                     }
                 }
             
 
-            }
+         }
 
-    // })
+     })
  }
-                )}   
+            
