@@ -27,13 +27,6 @@ if (command === "concert-this") {
             console.log(error);
         })
 
-    // spotify.search({ type: 'track', query: 'Jealous' }, function (err, data) {
-    //     if (err) {
-    //         return console.log('Error occurred: ' + err);
-    //     }
-
-    //     console.log(data);
-    // });
 
 
 } else if (command === "spotify-this-song") {
@@ -47,27 +40,27 @@ if (command === "concert-this") {
 
         }
 
-        if (error) {
-            return console.log(error);
-        }
-        else if (command === "movie-this") {
-            var movieName = process.argv[3];
-            axios.get("http://www.omdbapi.com/?t=" + movieName+ "&y=&plot=short&apikey=[key]")
-                .then(function (response) {
-                    for (var i = 0; i < response.data.length; i++) {
-                    console.log(response.data[i].title);
-                    console.log(response.data[i].year);
-                    console.log(response.data[i].rating);
-                    console.log(response.data[i].country);
-                    console.log(response.data[i].language);
-                    console.log(response.data[i].plot);
-                    console.log(response.data[i].actors);
-                    }
+
+
+    })
+} else if (command === "movie-this") {
+    var movieName = process.argv[3];
+    axios.get("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy")
+        .then(function (response) {
+            console.log(response.data.Title);
+            console.log(response.data.Year);
+            console.log(response.data.Rated);
+            for (var i = 0; i < response.data.Ratings.length; i++) {
+                var currentScore = response.data.Ratings[i];
+                if (currentScore.Source === "Internet Movie Database" || currentScore.Source === "Rotten Tomatoes") {
+                    console.log(currentScore.Source, currentScore.Value);
                 }
-            
+            }
+            console.log(response.data.Country);
+            console.log(response.data.Language);
+            console.log(response.data.Plot);
+            console.log(response.data.Actors);
+        })
 
-         }
+}
 
-     })
- }
-            
