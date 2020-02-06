@@ -65,6 +65,13 @@ if (command === "concert-this") {
         })
 
 
-        }else if(command ==="do-what-it-says"){
+        } else if(command ==="do-what-it-says"){
+            fs.readFile('./random.txt', 'utf8', function(err,data){
+                if(err){
+                    console.log(err);
+                }else
+                console.log('data', data);
+                });
+            }
 
 }
