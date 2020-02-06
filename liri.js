@@ -74,4 +74,3 @@ if (command === "concert-this") {
                 });
             }
 
-}
