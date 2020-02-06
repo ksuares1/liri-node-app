@@ -1,4 +1,1 @@
-# Spotify API keys
-
-SPOTIFY_ID=your-spotify-id
-SPOTIFY_SECRET=your-spotify-secret
+spotify-this-song,"I Want it That Way"
