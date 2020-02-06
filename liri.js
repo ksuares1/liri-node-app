@@ -1,5 +1,7 @@
 var axios = require('axios');
 require("dotenv").config();
+const fs = require("fs");
+
 
 var Spotify = require('node-spotify-api');
 var keys = require("./assets/JavaScript/keys.js");
@@ -62,5 +64,7 @@ if (command === "concert-this") {
             console.log(response.data.Actors);
         })
 
-}
 
+        }else if(command ==="do what it says"){
+
+}
