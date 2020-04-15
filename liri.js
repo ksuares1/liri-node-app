@@ -10,7 +10,7 @@ var spotify = new Spotify(keys.spotify);
 var moment = require('moment');
 moment().format();
 
-// commands
+// commandsy
 var command = process.argv[2];
 var input = process.argv.slice(3).join(' ');
 if (command === "concert-this") {
