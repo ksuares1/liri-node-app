@@ -7,8 +7,11 @@ LIRI is a Language Interpretation and Recognition Interface. LIRI is a command l
 
 ## Installations
 ```npm  i ```
+
  ```npm init -y ```
+ 
  ``` npm i express ```
+ 
  ```npm i --save-axios ```
 
 ## Built With 
