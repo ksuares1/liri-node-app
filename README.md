@@ -12,7 +12,7 @@ LIRI is a Language Interpretation and Recognition Interface. LIRI is a command l
  
  ``` $ npm i express ```
  
- ```$ npm i --save-axios ```
+ ```$ npm i axios ```
  
  ## Clone
 Clone this repo to your local machine ```https://github.com/ksuares1/liri-node-app.git```
