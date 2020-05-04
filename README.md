@@ -21,7 +21,7 @@ Clone this repo to your local machine ```https://github.com/ksuares1/liri-node-a
 - Request
 - Moment.js 
 - DotEnv 
-- Node-Spotify-API Node package
+- Node-Spotify-API 
 - Bandsintown API
 - Spotify API
 - OMDB (Open Movie Database) API
