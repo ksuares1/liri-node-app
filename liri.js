@@ -10,12 +10,13 @@ var spotify = new Spotify(keys.spotify);
 var moment = require('moment');
 moment().format();
 
-// commandsy
+// commands
 var command = process.argv[2];
-var input = process.argv.slice(3).join(' ');
+var input = process.argv.slice(3).join('') || 'adele';
 if (command === "concert-this") {
+   
 
-    axios.get("https://rest.bandsintown.com/artists/" + input + "/events?app_id=codingbootcamp")
+    axios.get(`https://rest.bandsintown.com/artists/${input}/events?app_id=codingbootcamp`)
         .then(function (response) {
             for (var i = 0; i < response.data.length; i++) {
                 console.log(response.data[i].venue);
@@ -33,9 +34,9 @@ if (command === "concert-this") {
 
 } else if (command === "spotify-this-song") {
     var songName = process.argv[3];
-    spotify.request('https://api.spotify.com/v1/search?q=track:' + songName + '&type=track&limit=10', function (error, response) {
+    spotify.request('https://api.spotify.com/v1/search?q=track:' + "Jealous" + '&type=track&limit=10', function (error, response) {
         for (var i = 0; i < response.tracks.items.length; i++) {
-            // console.log(response.tracks.items[i].artists[0].name);
+            console.log(response.tracks.items[i].artists[0].name);
             console.log(response.tracks.items[i].name);
             console.log(response.tracks.items[i].uri);
             console.log(response.tracks.items[i].album.name);
@@ -47,7 +48,7 @@ if (command === "concert-this") {
     })
 } else if (command === "movie-this") {
     var movieName = process.argv[3];
-    axios.get("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy")
+    axios.get("http://www.omdbapi.com/?t=" + "Joy"  + "&y=&plot=short&apikey=trilogy")
         .then(function (response) {
             console.log(response.data.Title);
             console.log(response.data.Year);
